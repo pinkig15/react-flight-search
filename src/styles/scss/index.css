@@ -1,0 +1,215 @@
+@import url(~react-datepicker/dist/react-datepicker.css);
+@import url(~rc-slider/assets/index.css);
+@import url(~react-select/dist/react-select.css);
+@import url(~react-dropdown/style.css);
+body, html {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  font-size: 16px; }
+
+body {
+  background-image: url("/src/asset/airplane.jpg"); }
+
+.app-container {
+  width: 70%;
+  text-align: center;
+  margin: auto auto; }
+  .app-container .app-header {
+    padding: 10px;
+    text-align: center;
+    color: #FFF; }
+  .app-container .app-view {
+    width: 100%;
+    max-height: 460px;
+    display: inline-flex;
+    background: transparent; }
+    .app-container .app-view .query-panel {
+      border: 1px solid #e1e1e1;
+      width: 30%;
+      padding: 5px; }
+      .app-container .app-view .query-panel .tabs {
+        height: 85%; }
+        .app-container .app-view .query-panel .tabs .tab-links {
+          display: inline-flex; }
+          .app-container .app-view .query-panel .tabs .tab-links li {
+            padding: 5px;
+            border: 1px solid blue;
+            text-decoration: none;
+            background-color: blue;
+            color: #FFF;
+            padding: 10px;
+            font-weight: bold;
+            cursor: pointer;
+            border-style: none; }
+            .app-container .app-view .query-panel .tabs .tab-links li.active {
+              background-color: #FFF;
+              color: blue; }
+        .app-container .app-view .query-panel .tabs form {
+          height: 80%;
+          display: none; }
+          .app-container .app-view .query-panel .tabs form.show {
+            display: block; }
+          .app-container .app-view .query-panel .tabs form input {
+            width: 90%;
+            padding: 8px;
+            margin: 8px; }
+          .app-container .app-view .query-panel .tabs form select {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 8px; }
+      .app-container .app-view .query-panel .price-slider {
+        height: 15%; }
+        .app-container .app-view .query-panel .price-slider label {
+          margin-bottom: 20px;
+          color: blue;
+          font-size: 20px; }
+    .app-container .app-view .result-panel {
+      border: 1px solid #e1e1e1;
+      padding-left: 5px;
+      padding-top: 0;
+      width: 70%;
+      float: left;
+      background-color: none; }
+      .app-container .app-view .result-panel .result-header {
+        height: 12%;
+        margin-bottom: 5px;
+        margin-top: 5px;
+        background-color: #FFF;
+        border: 1px solid #e1e1e1;
+        display: inline-flex;
+        width: 100%; }
+        .app-container .app-view .result-panel .result-header .left {
+          width: 70%;
+          text-align: left;
+          padding: 15px;
+          font-size: 22px; }
+        .app-container .app-view .result-panel .result-header .right {
+          width: 30%;
+          text-align: right;
+          padding: 10px 15px;
+          margin-right: 0; }
+      .app-container .app-view .result-panel ul {
+        display: grid;
+        overflow-y: auto;
+        max-height: 87%;
+        background-color: transparent;
+        margin: 0; }
+        .app-container .app-view .result-panel ul li {
+          margin-bottom: 5px;
+          background-color: #FFF; }
+          .app-container .app-view .result-panel ul li:last-of-type {
+            margin-bottom: 0; }
+
+.tab-links:after {
+  display: block;
+  clear: both;
+  content: ''; }
+
+.flight-item {
+  width: 90%;
+  padding: 2% 5%;
+  text-align: left; }
+  .flight-item .flight-item-left {
+    float: left; }
+    .flight-item .flight-item-left h2 {
+      margin-top: 0;
+      color: maroon; }
+    .flight-item .flight-item-left > div {
+      margin-bottom: 5px; }
+    .flight-item .flight-item-left .flight span {
+      font-style: italic;
+      color: orange; }
+    .flight-item .flight-item-left .flight-city {
+      font-weight: bold; }
+      .flight-item .flight-item-left .flight-city span {
+        color: #CCC;
+        padding-left: 10px; }
+    .flight-item .flight-item-left .flight-time {
+      font-weight: bold;
+      font-size: 20px; }
+  .flight-item .flight-item-right {
+    margin-top: 4%;
+    float: right;
+    width: 100px;
+    height: 100px;
+    text-align: center; }
+    .flight-item .flight-item-right .flight-item-image {
+      background: url("/src/asset/air.jpg");
+      width: 100px;
+      height: 56px;
+      background-size: 100%;
+      margin-bottom: 26px;
+      border-radius: 5px; }
+
+ul, li {
+  list-style: none;
+  padding-left: 0; }
+
+input[type='submit'] {
+  max-width: 160px;
+  padding: 10px !important; }
+
+button, input[type='submit'] {
+  padding: 5px 15px;
+  background-color: blue;
+  color: #FFF;
+  border-radius: 5px;
+  border: 1px solid blue;
+  font-weight: bold;
+  cursor: pointer; }
+
+.react-datepicker-wrapper,
+.react-datepicker__input-container {
+  width: 100%; }
+
+.react-datepicker-wrapper input {
+  width: 92% !important;
+  margin: 0 !important; }
+
+.rc-slider {
+  padding: 20px;
+  width: 90%;
+  margin: auto; }
+  .rc-slider .rc-slider-handle {
+    border-color: blue; }
+  .rc-slider .rc-slider-rail,
+  .rc-slider .rc-slider-step {
+    width: 100%;
+    margin-left: -5%;
+    background-color: blue; }
+  .rc-slider .rc-slider-track {
+    background-color: blue; }
+  .rc-slider .rc-slider-tooltip-inner {
+    background-color: blue;
+    color: #FFF; }
+
+.noflight {
+  height: 100%;
+  padding-top: 15%; }
+  .noflight label {
+    padding: 10px;
+    font-size: 30px;
+    color: #FFF; }
+
+.countPassanger {
+  display: inline-flex; }
+  .countPassanger > input {
+    margin-left: 0 !important; }
+  .countPassanger > input:last-of-type {
+    margin-right: 0 !important; }
+
+.calendars {
+  display: inline-flex; }
+  .calendars input {
+    padding: 0;
+    width: 80% !important;
+    margin-right: 0; }
+
+::placeholder {
+  font-style: italic; }
+
+@media only screen and (max-width: 767px) {
+  .app-container {
+    background-color: red; } }
